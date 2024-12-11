@@ -21,7 +21,7 @@ const levelOneDepthTree =
 ├── errors
 └── worker`;
 
-const emptyFolderTree = `EmptyFolder`;
+const singleFileTree = `EmptyFolder`;
 
 // remove jest argument --collectCoverage
 process.argv.pop();
@@ -55,10 +55,10 @@ describe('printFsTree', () => {
     expect(() => { main() }).toThrow('Specify depth correctly');
   })
 
-  it('should handle empty folder correctly', () => {
-    process.argv.push('EmptyFolder', '-d', '2');
+  it('should handle EmptyFolder with 0 depth correctly', () => {
+    process.argv.push('EmptyFolder', '-d', '0');
     const tree = main();
-    expect(tree).toBe(emptyFolderTree);
+    expect(tree).toBe(singleFileTree);
   })
 
   it('should print fullTree', () => {

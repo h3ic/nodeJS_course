@@ -1,1 +1,1 @@
-`pnpm run jest`
+`pnpm run test`
