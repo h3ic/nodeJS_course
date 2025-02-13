@@ -1,2 +1,1 @@
-
-![bce drawio](https://github.com/user-attachments/assets/d455ae11-e4f2-4ac0-b8bb-3af9aebed91c)
+![image](https://github.com/user-attachments/assets/60b14388-418b-4ae4-b70f-f018da6acb9f)
