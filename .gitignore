@@ -1,0 +1,4 @@
+node_modules/
+/best_courses_ever/coverage/*
+bce_api/
+lec*/
