@@ -4,7 +4,12 @@ import logger from "morgan";
 import express from "express";
 import path from "node:path";
 
-import { usersRouter, coursesRouter } from "./routes/index.js";
+import {
+  usersRouter,
+  coursesRouter,
+  lessonsRouter,
+  resourcesRouter,
+} from "./routes/index.js";
 
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -22,6 +27,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/users", usersRouter.apiRouter);
 app.use("/api/courses", coursesRouter.apiRouter);
+app.use("/api/lessons", lessonsRouter.apiRouter);
+app.use("/api/resources", resourcesRouter.apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
