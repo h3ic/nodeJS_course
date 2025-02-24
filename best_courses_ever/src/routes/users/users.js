@@ -1,4 +1,5 @@
 import express from "express";
+import { User } from "../../models/user";
 export const apiRouter = express.Router();
 
 /* API Routes */

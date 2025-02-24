@@ -15,7 +15,7 @@ describe("Courses API CRUD operations", () => {
       description: "Environment, deploy, frameworks",
       prerequisites: "Basic JavaScript",
       skills: "Express, Docker, Nest.js",
-      tags: [100, 101],
+      tags: [{name: "Backend"}, {name: "Web"}],
       difficulty: 2,
       lessons: [1, 2, 3],
     };
@@ -28,7 +28,7 @@ describe("Courses API CRUD operations", () => {
     expect(response.body.description).toBe("Environment, deploy, frameworks");
     expect(response.body.prerequisites).toBe("Basic JavaScript");
     expect(response.body.skills).toBe("Express, Docker, Nest.js");
-    expect(response.body.tags).toBe([100, 101]);
+    expect(response.body.tags).toBe([{name: "Backend"}, {name: "Web"}]);
     expect(response.body.difficulty).toBe(2);
     expect(response.body.lessons).toBe([1, 2, 3]);
 
@@ -61,7 +61,7 @@ describe("Courses API CRUD operations", () => {
       description: "Frameworks, algorithms",
       prerequisites: "Basic Go",
       skills: "Microservices, highload servers, architecture",
-      tags: [200, 201],
+      tags: [{name: "Backend"}, {name: "Highload"}],
       difficulty: 3,
       lessons: [4, 5, 6],
     };

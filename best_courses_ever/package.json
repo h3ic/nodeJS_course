@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "node --watch src/index.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "dev": "node --watch --env-file=.env src/index.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "db_init": "node --env-file=.env src/db_init.js"
   },
   "type": "module",
   "keywords": [],
@@ -29,6 +30,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.4",
     "http-errors": "~1.6.3",
+    "mongoose": "^8.10.1",
     "morgan": "~1.9.1",
     "supertest": "^7.0.0"
   }
