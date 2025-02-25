@@ -3,6 +3,9 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 import express from "express";
 import path from "node:path";
+import bodyParser from 'body-parser';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocs from './swagger-output.json' with { type: "json" }
 
 import {
   usersRouter,
@@ -24,11 +27,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.json())
 
 app.use("/api/users", usersRouter.apiRouter);
 app.use("/api/courses", coursesRouter.apiRouter);
 app.use("/api/lessons", lessonsRouter.apiRouter);
 app.use("/api/resources", resourcesRouter.apiRouter);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
